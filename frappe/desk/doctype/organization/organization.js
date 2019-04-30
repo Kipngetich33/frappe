@@ -15,8 +15,15 @@ var field_to_hide_unhide = {
 		"total_number_of_staff_section","section_break_65",
 		"part_two"
 	],
-	local: [],
-	all: ["part_one_section","organization_address",
+	somali: ["section_break_98","organization_address_local",
+		"section_break_106","section_break_112","community_group",
+		"applicant_application","describe_purpose_of_organization",
+		"organization_motto_section","organization_activity_section",
+		"organization_activity","community_counsel"
+	],
+	all: [
+		// fields for International NGO
+		"part_one_section","organization_address",
 		"somaliland_branch_offices_section",
 		"somaliland_most_senior_executive_section",
 		"ndp_ii_pillars_section","geographical_area",
@@ -25,7 +32,13 @@ var field_to_hide_unhide = {
 		"country_director",
 		"three_alternative_contact_persons_section",
 		"total_number_of_staff_section","section_break_65",
-		"part_two"
+		"part_two",
+		// fields for local NGO
+		"section_break_98","organization_address_local",
+		"section_break_106","section_break_112","community_group",
+		"applicant_application","describe_purpose_of_organization",
+		"organization_motto_section","organization_activity_section",
+		"organization_activity","community_counsel"
 	],
 }
 
@@ -42,12 +55,11 @@ function hide_unhide_fields(frm, list_of_fields, hide_or_unhide) {
 }
 
 function hide_unhide_on_refresh(frm) {
-	console.log("On refresh")
 	if (frm.doc.language && frm.doc.language == "English") {
 		hide_function(frm, field_to_hide_unhide, "english")
 	}
-	else if (frm.doc.language && frm.doc.language == "Local") {
-		hide_function(frm, field_to_hide_unhide, "local")
+	else if (frm.doc.language && frm.doc.language == "Somali") {
+		hide_function(frm, field_to_hide_unhide, "somali")
 	}
 	else {
 		hide_function(frm, field_to_hide_unhide, "none")
