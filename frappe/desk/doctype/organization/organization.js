@@ -84,7 +84,6 @@ function hide_unhide_on_refresh(frm) {
 reload to perform various action*/
 frappe.ui.form.on('Organization', {
 	refresh: function(frm) {
-		console.log("refreshing")
 		hide_unhide_on_refresh(frm)
 	}
 });
