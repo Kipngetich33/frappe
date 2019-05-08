@@ -4,6 +4,7 @@
  "allow_guest_to_view": 0, 
  "allow_import": 0, 
  "allow_rename": 0, 
+ "autoname": "field:full_name_of_the_organization", 
  "beta": 0, 
  "creation": "2019-04-26 16:18:20.599416", 
  "custom": 0, 
@@ -144,7 +145,7 @@
    "search_index": 0, 
    "set_only_once": 0, 
    "translatable": 0, 
-   "unique": 0
+   "unique": 1
   }, 
   {
    "allow_bulk_edit": 0, 
@@ -4406,7 +4407,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2019-04-30 11:43:17.353302", 
+ "modified": "2019-05-08 14:38:41.372287", 
  "modified_by": "Administrator", 
  "module": "Desk", 
  "name": "Organization", 
@@ -4439,6 +4440,7 @@
  "show_name_in_global_search": 0, 
  "sort_field": "modified", 
  "sort_order": "ASC", 
+ "title_field": "full_name_of_the_organization", 
  "track_changes": 1, 
  "track_seen": 0, 
  "track_views": 0

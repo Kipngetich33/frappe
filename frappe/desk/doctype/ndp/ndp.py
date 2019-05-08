@@ -6,5 +6,10 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class NDPII(Document):
-	pass
+
+from frappe.utils.nestedset import NestedSet
+
+# make the class Test inherit from the NestedSet
+class NDP(NestedSet):
+	nsm_parent_field = 'parent_ndp'
+
