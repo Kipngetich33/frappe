@@ -13,7 +13,7 @@
 	<link rel="icon"
 		href="{{ (favicon or "/assets/frappe/images/favicon.png") | abs_url }}"
 		type="image/x-icon">
-    {% endblock %}
+	{% endblock %}
 	{%- block head -%}
 		{% block meta_block %}{% endblock %}
 		{% if head_html is defined -%}
@@ -61,7 +61,8 @@
 				{%- block hero -%}{%- endblock -%}
                 </div>
                 <div class="container">
-                {% block content %}{% endblock %}
+				{% block content %}
+				{% endblock %}
                 </div>
             </div>
 			{%- if footer is defined -%}

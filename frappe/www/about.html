@@ -1,19 +1,88 @@
 {% extends "templates/web.html" %}
 
 {% block title %}About Us{% endblock %}
-{% block page_sidebar %}
+<!-- {% block page_sidebar %}
 {% include "templates/pages/web_sidebar.html" %}
-{% endblock %}
+{% endblock %} -->
 {% block page_content %}
 
 <article class="about-content">
-	{{ doc.company_introduction or """<p>Some Introduction about your company that you would
-			like your website visitor to know.
+	{{ doc.company_introduction or """
+	<p style='color:red'>
+			charles
+	</p>
+	<p>
+		like your website visitor to know.
 			More people than you think will read your About page.
 			People always like to know who the are doing business with.
 			Be authentic and avoid using jargon like 'value added services' etc.
 			Be sure to update your company history and
-			list of key team members in Website > About Us Settings</p>""" }}
+			list of key team members in Website > About Us Settings
+	</p>
+
+	<p>
+		like your website visitor to know.
+			More people than you think will read your About page.
+			People always like to know who the are doing business with.
+			Be authentic and avoid using jargon like 'value added services' etc.
+			Be sure to update your company history and
+			list of key team members in Website > About Us Settings
+	</p>
+
+	<p>
+		like your website visitor to know.
+			More people than you think will read your About page.
+			People always like to know who the are doing business with.
+			Be authentic and avoid using jargon like 'value added services' etc.
+			Be sure to update your company history and
+			list of key team members in Website > About Us Settings
+	</p>
+
+	<p>
+		like your website visitor to know.
+			More people than you think will read your About page.
+			People always like to know who the are doing business with.
+			Be authentic and avoid using jargon like 'value added services' etc.
+			Be sure to update your company history and
+			list of key team members in Website > About Us Settings
+	</p>
+
+	<p>
+		like your website visitor to know.
+			More people than you think will read your About page.
+			People always like to know who the are doing business with.
+			Be authentic and avoid using jargon like 'value added services' etc.
+			Be sure to update your company history and
+			list of key team members in Website > About Us Settings
+	</p>
+
+	<p>
+		like your website visitor to know.
+			More people than you think will read your About page.
+			People always like to know who the are doing business with.
+			Be authentic and avoid using jargon like 'value added services' etc.
+			Be sure to update your company history and
+			list of key team membe
+	</p>
+
+	<p>
+		like your website visitor to know.
+			More people than you think will read your About page.
+			People always like to know who the are doing business with.
+			Be authentic and avoid using jargon like 'value added services' etc.
+			Be sure to update your company history and
+			list of key team members in Website > About Us Settings
+	</p>
+
+	<p>
+		like your website visitor to know.
+			More people than you think will read your About page.
+			People always like to know who the are doing business with.
+			Be authentic and avoid using jargon like 'value added services' etc.
+			Be sure to update your company history and
+			list of key team members in Website > About Us Settings
+	</p>
+	""" }}
 
 	{% if doc.get({"doctype":"Company History"}) %}
 	<h3>{{ doc.company_history_heading or "Company History" }}</h3>

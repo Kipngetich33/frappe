@@ -225,3 +225,8 @@ before_write_file = "frappe.limits.validate_space_limit"
 before_migrate = ['frappe.patches.v11_0.sync_user_permission_doctype_before_migrate.execute']
 
 otp_methods = ['OTP App','Email','SMS']
+
+
+# role_home_page = {
+#     "Organization Login": "home"
+# }
