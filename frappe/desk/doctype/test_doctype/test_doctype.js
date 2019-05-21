@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Test Doctype', {
 	refresh: function(frm) {
-
+		
 	}
 });
 

@@ -1,4 +1,4 @@
-{% extends "templates/test_web.html" %}
+{% extends "templates/customized_web.html" %}
 
 {% block content %}
     <header class="site-header">
@@ -7,17 +7,17 @@
                 <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-lg-center">
                     <div class="col-12 col-lg-8 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
                         <div class="header-bar-email">
-                            MAIL: <a href="#">contact@ourcharity.com</a>
+                            MAIL: <a href="#">email@somalilandprototype.com</a>
                         </div><!-- .header-bar-email -->
 
                         <div class="header-bar-text">
-                            <p>PHONE: <span>+24 3772 120 091 / +56452 4567</span></p>
+                            <p>PHONE: <span>+252 XXX XXX XXX / +252 XXX XXX XXX </span></p>
                         </div><!-- .header-bar-text -->
                     </div><!-- .col -->
 
                     <div class="col-12 col-lg-4 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
                         <div class="donate-btn">
-                            <a href="#">Donate Now</a>
+                            <a href="/login">Login</a>
                         </div><!-- .donate-btn -->
                     </div><!-- .col -->
                 </div><!-- .row -->
@@ -28,18 +28,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                            
                         <div class="site-branding d-flex align-items-center">
-                           <a class="d-block" href="index.html" rel="home"><img class="d-block" src="assets/somaliland/images/logo.png" alt="logo"></a>
+                                
+                           <a class="d-block" href="index.html" rel="home">
+                               <img class="d-block" id="index_logo"src="assets/somaliland/images/somaliland_logo.png" alt="logo">
+                              
+                            </a>
+                            <h1 style="font-weight:bold">
+                                &nbsp;  Somaliland Aid Flow Management System
+                            </h1>
                         </div><!-- .site-branding -->
 
                         <nav class="site-navigation d-flex justify-content-end align-items-center">
                             <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                <li class="current-menu-item"><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="causes.html">Causes</a></li>
-                                <li><a href="portfolio.html">Gallery</a></li>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="current-menu-item"><a href="/">Home</a></li>
+                                <li><a href="about">About us</a></li>
+                                <li><a href="contact1.html">Contact</a></li>
+                                <li><a href="news1.html">Dashboard</a></li>
+                                <li><a href="causes1.html">NDPs</a></li>
                             </ul>
                         </nav><!-- .site-navigation -->
 
@@ -58,15 +65,15 @@
     <div class="swiper-container hero-slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide hero-content-wrap">
-                <img src="assets/somaliland/images/hero.jpg" alt="">
+                <img src="assets/somaliland/images/hagresa (1).jpg" alt="">
 
                 <div class="hero-content-overlay position-absolute w-100 h-100">
                     <div class="container h-100">
                         <div class="row h-100">
                             <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                                 <header class="entry-header">
-                                    <h1>Donate</h1>
-                                    <h4>4 a better world</h4>
+                                    <h1>Somaliland</h1>
+                                    <h4>Aid Flow Management System</h4>
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
@@ -84,15 +91,15 @@
             </div><!-- .hero-content-wrap -->
 
             <div class="swiper-slide hero-content-wrap">
-                <img src="assets/somaliland/images/hero.jpg" alt="">
+                <img src="assets/somaliland/images/somliland_latest (1).jpg" alt="">
 
                 <div class="hero-content-overlay position-absolute w-100 h-100">
                     <div class="container h-100">
                         <div class="row h-100">
                             <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                                 <header class="entry-header">
-                                    <h1>Donate</h1>
-                                    <h4>4 a better world</h4>
+                                    <h1>Somaliland</h1>
+                                    <h4>Aid Flow Management System</h4>
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
@@ -110,15 +117,15 @@
             </div><!-- .hero-content-wrap -->
 
             <div class="swiper-slide hero-content-wrap">
-                <img src="assets/somaliland/images/hero.jpg" alt="">
+                <img src="assets/somaliland/images/somaliland_beach1 (1).jpeg" alt="">
 
                 <div class="hero-content-overlay position-absolute w-100 h-100">
                     <div class="container h-100">
                         <div class="row h-100">
                             <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                                 <header class="entry-header">
-                                    <h1>Donate</h1>
-                                    <h4>4 a better world</h4>
+                                    <h1>Somaliland</h1>
+                                    <h4>Aid Flow Management System</h4>
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content mt-4">
@@ -158,12 +165,13 @@
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="icon-box active">
                         <figure class="d-flex justify-content-center">
-                            <img src="assets/somaliland/images/hands-gray.png" alt="">
-                            <img src="assets/somaliland/images/hands-white.png" alt="">
+                            <!-- <img src="assets/somaliland/images/hands-gray.png" alt=""> -->
+                            <!-- <img src="assets/somaliland/images/hands-white.png" alt=""> -->
+                            <i class="far fa-chart-bar"></i>
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Become a Volunteer</h3>
+                            <h3 class="entry-title">Reports</h3>
                         </header>
 
                         <div class="entry-content">
@@ -175,12 +183,13 @@
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="icon-box">
                         <figure class="d-flex justify-content-center">
-                            <img src="assets/somaliland/images/donation-gray.png" alt="">
-                            <img src="assets/somaliland/images/donation-white.png" alt="">
+                            <!-- <img src="assets/somaliland/images/donation-gray.png" alt="">
+                            <img src="assets/somaliland/images/donation-white.png" alt=""> -->
+                            <i class="far fa-chart-bar"></i>
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Dance & Music</h3>
+                            <h3 class="entry-title">Dashboards</h3>
                         </header>
 
                         <div class="entry-content">
@@ -192,12 +201,13 @@
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="icon-box">
                         <figure class="d-flex justify-content-center">
-                            <img src="assets/somaliland/images/charity-gray.png" alt="">
-                            <img src="assets/somaliland/images/charity-white.png" alt="">
+                            <!-- <img src="assets/somaliland/images/charity-gray.png" alt="">
+                            <img src="assets/somaliland/images/charity-white.png" alt=""> -->
+                            <i class="far fa-chart-bar"></i>
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Online Conference</h3>
+                            <h3 class="entry-title">Report Builder</h3>
                         </header>
 
                         <div class="entry-content">
@@ -215,7 +225,7 @@
                 <div class="col-12 col-lg-6 order-2 order-lg-1">
                     <div class="welcome-content">
                         <header class="entry-header">
-                            <h2 class="entry-title">Wellcome to our Charity</h2>
+                            <h2 class="entry-title">Somaliland National Development Plan (NDP)</h2>
                         </header><!-- .entry-header -->
 
                         <div class="entry-content mt-5">
@@ -229,7 +239,7 @@
                 </div><!-- .col -->
 
                 <div class="col-12 col-lg-6 mt-4 order-1 order-lg-2">
-                    <img src="assets/somaliland/images/welcome.jpg" alt="welcome">
+                    <img src="assets/somaliland/images/somliland_town.jpg" alt="welcome">
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -241,24 +251,24 @@
                 <div class="col-12 col-lg-6">
                     <div class="upcoming-events">
                         <div class="section-heading">
-                            <h2 class="entry-title">Upcoming Events</h2>
+                            <h2 class="entry-title">Ongoing Projects</h2>
                         </div><!-- .section-heading -->
 
                         <div class="event-wrap d-flex flex-wrap justify-content-between">
                             <figure class="m-0">
-                                <img src="assets/somaliland/images/event-1.jpg" alt="">
+                                <img src="assets/somaliland/images/education (1).jpeg" alt="">
                             </figure>
 
                             <div class="event-content-wrap">
                                 <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
+                                    <h3 class="entry-title w-100 m-0"><a href="#">Project 1</a></h3>
 
                                     <div class="posted-date">
                                         <a href="#">Aug 25, 2018 </a>
                                     </div><!-- .posted-date -->
 
                                     <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
+                                        <a href="#">Project 1</a>
                                     </div><!-- .cats-links -->
                                 </header><!-- .entry-header -->
 
@@ -274,19 +284,19 @@
 
                         <div class="event-wrap d-flex flex-wrap justify-content-between">
                             <figure class="m-0">
-                                <img src="assets/somaliland/images/event-2.jpg" alt="">
+                                <img src="assets/somaliland/images/capital (1).jpg" alt="">
                             </figure>
 
                             <div class="event-content-wrap">
                                 <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                    <h3 class="entry-title w-100 m-0"><a href="#">Project 2</a></h3>
 
                                     <div class="posted-date">
                                         <a href="#">Aug 25, 2018 </a>
                                     </div><!-- .posted-date -->
 
                                     <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
+                                        <a href="#">Project 2</a>
                                     </div><!-- .cats-links -->
                                 </header><!-- .entry-header -->
 
@@ -302,19 +312,20 @@
 
                         <div class="event-wrap d-flex flex-wrap justify-content-between">
                             <figure class="m-0">
-                                <img src="assets/somaliland/images/event-3.jpg" alt="">
+                                <!-- <img src="assets/somaliland/images/event-3.jpg" alt=""> -->
+                                <img src="assets/somaliland/images/green_house.jpeg"  alt="">
                             </figure>
 
                             <div class="event-content-wrap">
                                 <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                    <h3 class="entry-title w-100 m-0"><a href="#">Project 3</a></h3>
 
                                     <div class="posted-date">
                                         <a href="#">Aug 25, 2018 </a>
                                     </div><!-- .posted-date -->
 
                                     <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
+                                        <a href="#">Project 3</a>
                                     </div><!-- .cats-links -->
                                 </header><!-- .entry-header -->
 
@@ -333,24 +344,24 @@
                 <div class="col-12 col-lg-6">
                     <div class="featured-cause">
                         <div class="section-heading">
-                            <h2 class="entry-title">Featured Cause</h2>
+                            <h2 class="entry-title">Featured Project</h2>
                         </div><!-- .section-heading -->
 
                         <div class="cause-wrap d-flex flex-wrap justify-content-between">
                             <figure class="m-0">
-                                <img src="assets/somaliland/images/featured-causes.jpg" alt="">
+                                <img src="assets/somaliland/images/somaliland_children (3).jpg" alt="">
                             </figure>
 
                             <div class="cause-content-wrap">
                                 <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
+                                    <h3 class="entry-title w-100 m-0"><a href="#">Lorem ipsum dolor sit amet</a></h3>
 
                                     <div class="posted-date">
                                         <a href="#">Aug 25, 2018 </a>
                                     </div><!-- .posted-date -->
 
                                     <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
+                                        <a href="#">Project 4</a>
                                     </div><!-- .cats-links -->
                                 </header><!-- .entry-header -->
 
@@ -374,11 +385,11 @@
 
                                 <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                                     <div class="fund-raised-total mt-4">
-                                        Raised: $56 880
+                                        Amount Donated: $ XXXXXXXX.XX
                                     </div><!-- .fund-raised-total -->
 
                                     <div class="fund-raised-goal mt-4">
-                                        Goal: $70 000
+                                        Target Amount: $ XXXXXXXX.XX
                                     </div><!-- .fund-raised-goal -->
                                 </div><!-- .fund-raised-details -->
                             </div><!-- .fund-raised -->
@@ -394,7 +405,7 @@
             <div class="row">
                 <div class="coL-12">
                     <div class="section-heading">
-                        <h2 class="entry-title">Our Causes</h2>
+                        <h2 class="entry-title">Budget Allocation</h2>
                     </div><!-- .section-heading -->
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -406,16 +417,16 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="assets/somaliland/images/cause-1.jpg" alt="">
+                                        <img src="assets/somaliland/images/port (1).jpeg" alt="">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+                                            <a href="#" class="btn gradient-bg mr-2">Learn More</a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="#">Economic Pillar</a></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
@@ -433,11 +444,11 @@
 
                                             <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                                                 <div class="fund-raised-total mt-4">
-                                                    Raised: $56 880
+                                                    Budgeted Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-total -->
 
                                                 <div class="fund-raised-goal mt-4">
-                                                    Goal: $70 000
+                                                    Actual Amount: $ XXXXXXXX.XX
                                                 </div><!-- .fund-raised-goal -->
                                             </div><!-- .fund-raised-details -->
                                         </div><!-- .fund-raised -->
@@ -448,16 +459,16 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="assets/somaliland/images/cause-2.jpg" alt="">
+                                        <img src="assets/somaliland/images/enviroment (1).jpeg" alt="">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+                                            <a href="#" class="btn gradient-bg mr-2">Learn More</a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Education for all</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="#">Environment Pillar</a></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
@@ -475,11 +486,11 @@
 
                                             <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                                                 <div class="fund-raised-total mt-4">
-                                                    Raised: $56 880
+                                                    Budgeted Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-total -->
 
                                                 <div class="fund-raised-goal mt-4">
-                                                    Goal: $70 000
+                                                    Actual Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-goal -->
                                             </div><!-- .fund-raised-details -->
                                         </div><!-- .fund-raised -->
@@ -490,16 +501,16 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="assets/somaliland/images/cause-3.jpg" alt="">
+                                        <img src="assets/somaliland/images/parliament (1).jpeg" alt="">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+                                            <a href="#" class="btn gradient-bg mr-2">Learn More</a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="#"></a>Gorvernance Pillar</h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
@@ -517,11 +528,11 @@
 
                                             <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                                                 <div class="fund-raised-total mt-4">
-                                                    Raised: $56 880
+                                                    Budgeted Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-total -->
 
                                                 <div class="fund-raised-goal mt-4">
-                                                    Goal: $70 000
+                                                    Actual Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-goal -->
                                             </div><!-- .fund-raised-details -->
                                         </div><!-- .fund-raised -->
@@ -532,7 +543,7 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="assets/somaliland/images/cause-1.jpg" alt="">
+                                        <img src="assets/somaliland/images/infrusture (1).jpg" alt="">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
                                             <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
@@ -541,7 +552,7 @@
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="#">Infrustructure Pillar</a></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
@@ -559,11 +570,11 @@
 
                                             <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                                                 <div class="fund-raised-total mt-4">
-                                                    Raised: $56 880
+                                                    Actual Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-total -->
 
                                                 <div class="fund-raised-goal mt-4">
-                                                    Goal: $70 000
+                                                    Actual Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-goal -->
                                             </div><!-- .fund-raised-details -->
                                         </div><!-- .fund-raised -->
@@ -574,16 +585,16 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="assets/somaliland/images/cause-2.jpg" alt="">
+                                        <img src="assets/somaliland/images/culture (1).jpg" alt="">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+                                            <a href="#" class="btn gradient-bg mr-2">Learn More</a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Education for all</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="#">Social Development Pilla</a></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
@@ -601,11 +612,11 @@
 
                                             <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                                                 <div class="fund-raised-total mt-4">
-                                                    Raised: $56 880
+                                                    Budgeted Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-total -->
 
                                                 <div class="fund-raised-goal mt-4">
-                                                    Goal: $70 000
+                                                    Actual Amount: $ XXXXXX.XX
                                                 </div><!-- .fund-raised-goal -->
                                             </div><!-- .fund-raised-details -->
                                         </div><!-- .fund-raised -->
@@ -613,47 +624,7 @@
                                 </div><!-- .cause-wrap -->
                             </div><!-- .swiper-slide -->
 
-                            <div class="swiper-slide">
-                                <div class="cause-wrap">
-                                    <figure class="m-0">
-                                        <img src="assets/somaliland/images/cause-3.jpg" alt="">
-
-                                        <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-                                        </div><!-- .figure-overlay -->
-                                    </figure>
-
-                                    <div class="cause-content-wrap">
-                                        <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
-                                        </header><!-- .entry-header -->
-
-                                        <div class="entry-content">
-                                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
-                                        </div><!-- .entry-content -->
-
-                                        <div class="fund-raised w-100">
-                                            <div class="fund-raised-bar-6 barfiller">
-                                                <div class="tipWrap">
-                                                    <span class="tip"></span>
-                                                </div><!-- .tipWrap -->
-
-                                                <span class="fill" data-percentage="83"></span>
-                                            </div><!-- .fund-raised-bar -->
-
-                                            <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-                                                <div class="fund-raised-total mt-4">
-                                                    Raised: $56 880
-                                                </div><!-- .fund-raised-total -->
-
-                                                <div class="fund-raised-goal mt-4">
-                                                    Goal: $70 000
-                                                </div><!-- .fund-raised-goal -->
-                                            </div><!-- .fund-raised-details -->
-                                        </div><!-- .fund-raised -->
-                                    </div><!-- .cause-content-wrap -->
-                                </div><!-- .cause-wrap -->
-                            </div><!-- .swiper-slide -->
+                            
                         </div><!-- .swiper-wrapper -->
 
                     </div><!-- .swiper-container -->
@@ -676,7 +647,7 @@
             <div class="row align-items-end">
                 <div class="coL-12 col-lg-6">
                     <div class="section-heading">
-                        <h2 class="entry-title">We love to help all the children that have problems in the world. After 15 years we have many goals achieved.</h2>
+                        <h2 class="entry-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris..</h2>
 
                         <p class="mt-5">Dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Lorem ipsum dolor sit amet.</p>
                     </div><!-- .section-heading -->
@@ -695,7 +666,7 @@
                                     <div class="counter-k">K</div>
                                 </div>
 
-                                <h3 class="entry-title">Children helped</h3><!-- entry-title -->
+                                <h3 class="entry-title">Organizations</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
@@ -709,21 +680,21 @@
                                     <div class="start-counter" data-to="79" data-speed="2000"></div>
                                 </div>
 
-                                <h3 class="entry-title">Water wells</h3><!-- entry-title -->
+                                <h3 class="entry-title">Donars</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
                         <div class="col-12 col-sm-4 mt-5 mt-lg-0">
                             <div class="counter-box">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="assets/somaliland/images/dove.png" alt="">
+                                    <img src="assets/somaliland/images/hands-gray.png" alt="">
                                 </div>
 
                                 <div class="d-flex justify-content-center align-items-baseline">
                                     <div class="start-counter" data-to="253" data-speed="2000"></div>
                                 </div>
 
-                                <h3 class="entry-title">Volunteeres</h3><!-- entry-title -->
+                                <h3 class="entry-title">Implementing Organizations</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
                     </div><!-- .milestones -->
@@ -738,7 +709,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <h2><a class="foot-logo" href="#"><img src="assets/somaliland/images/foot-logo.png" alt=""></a></h2>
+                            <h2 ><a class="foot-logo" href="#"><img src="assets/somaliland/images/somaliland_logo.png" alt="" style="height:100px;width:100px;"></a></h2>
 
                             <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris temp us vestib ulum mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.Lorem ipsum dolo.</p>
 
@@ -757,34 +728,32 @@
                         <h2>Useful Links</h2>
 
                         <ul>
-                            <li><a href="#">Privacy Polticy</a></li>
-                            <li><a href="#">Become  a Volunteer</a></li>
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Causes</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">News</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">NDp</a></li>
                         </ul>
                     </div><!-- .col -->
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
                         <div class="foot-latest-news">
-                            <h2>Latest News</h2>
+                            <h2>Explore</h2>
 
                             <ul>
                                 <li>
-                                    <h3><a href="#">A new cause to help</a></h3>
+                                    <h3><a href="#">Completed Projects</a></h3>
                                     <div class="posted-date">MArch 12, 2018</div>
                                 </li>
 
                                 <li>
-                                    <h3><a href="#">We love to help people</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
+                                    <h3><a href="#">Ongoing Projects</a></h3>
+                                    <div class="posted-date">2019</div>
                                 </li>
 
                                 <li>
-                                    <h3><a href="#">The new ideas for helping</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
+                                    <h3><a href="#">Proposed Projects</a></h3>
+                                    <div class="posted-date">2019</div>
                                 </li>
                             </ul>
                         </div><!-- .foot-latest-news -->
@@ -795,9 +764,9 @@
                             <h2>Contact</h2>
 
                             <ul>
-                                <li><i class="fa fa-phone"></i><span>+45 677 8993000 223</span></li>
-                                <li><i class="fa fa-envelope"></i><span>office@template.com</span></li>
-                                <li><i class="fa fa-map-marker"></i><span>Main Str. no 45-46, b3, 56832, Los Angeles, CA</span></li>
+                                <li><i class="fa fa-phone"></i><span>+252 XXXXXXXXXX</span></li>
+                                <li><i class="fa fa-envelope"></i><span>example@somalilandaidflows.com</span></li>
+                                <li><i class="fa fa-map-marker"></i><span>Str. no XXX,Hargeisa, Somalilaland</span></li>
                             </ul>
                         </div><!-- .foot-contact -->
 
@@ -817,7 +786,7 @@
                 <div class="row">
                     <div class="col-12">
                         <p class="m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        Powered by Upande Ltd | Special Attribution to Colorlib <i class="fa fa-heart-o" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank">Colorlib</a><script>document.write(new Date().getFullYear());</script>&copy;
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div><!-- .col-12 -->
                 </div><!-- .row -->
