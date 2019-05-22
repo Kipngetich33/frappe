@@ -6,5 +6,5 @@ from __future__ import unicode_literals
 import frappe
 import unittest
 
-class TestPerformance(unittest.TestCase):
+class TestAnnualPlan(unittest.TestCase):
 	pass

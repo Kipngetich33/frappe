@@ -5,8 +5,6 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
-from frappe.utils.nestedset import NestedSet
 
-# make the class Test inherit from the NestedSet
-class Region(NestedSet):
-	nsm_parent_field = 'parent_region'
+class AnnualReport(Document):
+	pass

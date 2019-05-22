@@ -6,5 +6,11 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class Performance(Document):
-	pass
+# class AdministrativeUnit(Document):
+# 	pass
+
+from frappe.utils.nestedset import NestedSet
+
+# make the class Test inherit from the NestedSet
+class AdministrativeUnit(NestedSet):
+	nsm_parent_field = 'parent_administrative_unit'
