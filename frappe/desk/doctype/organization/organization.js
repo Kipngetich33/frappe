@@ -4,7 +4,7 @@
 
 // global variables
 var field_to_hide_unhide = {
-	english: ["part_one_section","organization_address",
+	international_ngo: ["part_one_section","organization_address",
 		"somaliland_branch_offices_section",
 		"somaliland_most_senior_executive_section",
 		"ndp_ii_pillars_section","geographical_area",
@@ -15,7 +15,7 @@ var field_to_hide_unhide = {
 		"total_number_of_staff_section","section_break_65",
 		"part_two"
 	],
-	somali: ["section_break_98","organization_address_local",
+	local_ngo: ["section_break_98","organization_address_local",
 		"section_break_106","section_break_112","community_group",
 		"applicant_application","describe_purpose_of_organization",
 		"organization_motto_section","organization_activity_section",
@@ -33,12 +33,15 @@ var field_to_hide_unhide = {
 		"three_alternative_contact_persons_section",
 		"total_number_of_staff_section","section_break_65",
 		"part_two",
+		// fields for counry address
+		'directors_address','director_city','director_code','country',
 		// fields for local NGO
 		"section_break_98","organization_address_local",
 		"section_break_106","section_break_112","community_group",
 		"applicant_application","describe_purpose_of_organization",
 		"organization_motto_section","organization_activity_section",
 		"organization_activity","community_counsel"
+
 	],
 }
 
@@ -55,14 +58,21 @@ function hide_unhide_fields(frm, list_of_fields, hide_or_unhide) {
 }
 
 function hide_unhide_on_refresh(frm) {
-	if (frm.doc.language && frm.doc.language == "English") {
-		hide_function(frm, field_to_hide_unhide, "english")
+	if (frm.doc.organization_type && frm.doc.organization_type == "International NGO") {
+		hide_function(frm, field_to_hide_unhide, "international_ngo")
 	}
-	else if (frm.doc.language && frm.doc.language == "Somali") {
-		hide_function(frm, field_to_hide_unhide, "somali")
+	else if (frm.doc.organization_type && frm.doc.organization_type == "Local NGO") {
+		hide_function(frm, field_to_hide_unhide, "local_ngo")
 	}
 	else {
 		hide_function(frm, field_to_hide_unhide, "none")
+		if(frm.doc.organization_type =="Select One"){
+			// do nothing for now
+		}
+		else{
+			var non_existant_form ="Registration Form for "+frm.doc.organization_type+" is Currently Unavailable"
+			frappe.msgprint(non_existant_form)
+		}
 	}
 
 	function hide_function(frm, field_to_hide_unhide, language) {
@@ -89,11 +99,25 @@ frappe.ui.form.on('Organization', {
 });
 
 // function that hide/unhide section based on selected language
-frappe.ui.form.on("Organization", "language", function(frm){ 
+frappe.ui.form.on("Organization", "organization_type", function(frm){ 
 	// refresh to hide/unhide fields
 	frm.refresh()
 });
 
+
+// function that hide/unhide section based on selected language
+frappe.ui.form.on("Organization", "select_one", function(frm){ 
+	// refresh to hide/unhide fields
+	if(frm.doc.select_one =="Select One"){
+		hide_unhide_fields(frm,['directors_address','director_city','director_code','country'], false)
+	}
+	else if(frm.doc.select_one =="Other"){
+		hide_unhide_fields(frm,['directors_address','director_city','director_code','country'], true)
+	}
+	else{
+		hide_unhide_fields(frm,['directors_address','director_city','director_code','country'], false)
+	}
+});
 
 
 
