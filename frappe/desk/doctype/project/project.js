@@ -53,25 +53,14 @@ frappe.ui.form.on('Project', {
 				// do nothing for now
 			}
 		}else{
-			console.log("new")
+			// do nothing 
 		}
 	}
-});
-
-// function that checks if correct funding status has been selected
-frappe.ui.form.on("Source Organization", "amount", function(frm,cdt,cdn){ 
-	var child = locals[cdt][cdn];
-	// check if a funging status has been selected
-	if(child.funding_status_select_one == "&lt; Select One&gt;"){
-		frappe.throw("Please Select a Funding Status")
-	}
-
 });
 
 // function that asks the user if they have verified all the information before
 // all the fields are made read only
 frappe.ui.form.on("Project","validate_button",function(frm){
-	console.log("validate")
 	frappe.confirm(
 		'Once Validated,You Cannot Change the Information. Do You Want to Continue?',
 		// If user choose to continue
@@ -84,8 +73,51 @@ frappe.ui.form.on("Project","validate_button",function(frm){
 		},
 		// if user choses No
 		function(){
-			console.log("user No")
 			// show_alert('Thanks for continue here!')
 		}
 	)
+});
+
+
+// function that checks if correct funding status has been selected
+frappe.ui.form.on("Source Organization", "amount", function(frm,cdt,cdn){ 
+	var child = locals[cdt][cdn];
+	// check if a funging status has been selected
+	if(child.funding_status_select_one == "&lt; Select One&gt;"){
+		frappe.throw("Please Select a Funding Status")
+	}
+
+});
+
+// function that a source organization has been selected
+frappe.ui.form.on("Source Organization", "funding_status_select_one", function(frm,cdt,cdn){ 
+	var child = locals[cdt][cdn];
+	// check if a funging status has been selected
+	if(child.source_organization_name || child.enter_name_of_source_organization){
+		// source is defined do nothing
+	}else{
+		frappe.throw("Give a Source Organization First")
+	}
+});
+
+// function that a source organization type has been selected
+frappe.ui.form.on("Source Organization", "enter_name_of_source_organization", function(frm,cdt,cdn){ 
+	var child = locals[cdt][cdn];
+	// check if a funging status has been selected
+	if(child.enter_the_name_of_source_organization || child.source_organization_type){
+		// source is defined do nothing
+	}else{
+		frappe.throw("Give The Source Organization Type First")
+	}
+});
+
+// function that a source organization type has been selected
+frappe.ui.form.on("Source Organization", "source_organization_name", function(frm,cdt,cdn){ 
+	var child = locals[cdt][cdn];
+	// check if a funging status has been selected
+	if(child.enter_the_name_of_source_organization || child.source_organization_type){
+		// source is defined do nothing
+	}else{
+		frappe.throw("Give The Source Organization Type First")
+	}
 });
