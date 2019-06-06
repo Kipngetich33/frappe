@@ -144,32 +144,75 @@ frappe.ui.form.on("Source Organization", "amount", function(frm,cdt,cdn){
 // function that a source organization has been selected
 frappe.ui.form.on("Source Organization", "funding_status_select_one", function(frm,cdt,cdn){ 
 	var child = locals[cdt][cdn];
-	// check if a funging status has been selected
-	if(child.source_organization_name || child.enter_name_of_source_organization){
-		// source is defined do nothing
+	
+	if(child.source_organization_name){
+		if(child.source_organization_name == "Other"){
+			if(child.enter_name_of_source_organization){
+				// do nothing
+			}else{
+				frappe.throw("Give The Source Organization First")
+			}
+			
+		}
 	}else{
-		frappe.throw("Give a Source Organization First")
+		frappe.throw("Give The Source Organization First")
 	}
 });
 
 // function that a source organization type has been selected
 frappe.ui.form.on("Source Organization", "enter_name_of_source_organization", function(frm,cdt,cdn){ 
 	var child = locals[cdt][cdn];
-	// check if a funging status has been selected
-	if(child.enter_the_name_of_source_organization || child.source_organization_type){
-		// source is defined do nothing
+	
+	if(child.source_organization_type){
+		if(child.source_organization_type == "Other"){
+			if(child.enter_organization_type){
+				// do nothing
+			}else{
+				frappe.throw("Give The Source Organization Type First")
+			}
+			
+		}
 	}else{
 		frappe.throw("Give The Source Organization Type First")
 	}
+
 });
 
 // function that a source organization type has been selected
 frappe.ui.form.on("Source Organization", "source_organization_name", function(frm,cdt,cdn){ 
 	var child = locals[cdt][cdn];
-	// check if a funging status has been selected
-	if(child.enter_the_name_of_source_organization || child.source_organization_type){
-		// source is defined do nothing
+
+	if(child.source_organization_type){
+		if(child.source_organization_type == "Other"){
+			if(child.enter_organization_type){
+				// do nothing
+			}else{
+				frappe.throw("Give The Source Organization Type First")
+			}
+			
+		}
 	}else{
 		frappe.throw("Give The Source Organization Type First")
+	}
+
+	// if source organization selected is other unhude the field enter_the_name_of_source_organization
+	if(child.source_organization_name == "Other"){
+		child.source_organization_does_not_exist_in_the_list_above = 1
+		cur_frm.refresh_fields();
+		
+	}else{
+		child.source_organization_does_not_exist_in_the_list_above = 0
+		cur_frm.refresh_fields();
+	}
+	
+});
+
+// function that checks the source organization type selected
+frappe.ui.form.on("Source Organization", "source_organization_type", function(frm,cdt,cdn){ 
+	var child = locals[cdt][cdn];
+	// check if a funging status has been selected
+	if(child.source_organization_type == "Other"){
+		child.organization_type_is_not_in_the_list_above = 1
+		cur_frm.refresh_fields();
 	}
 });
