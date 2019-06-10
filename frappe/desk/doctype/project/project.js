@@ -81,6 +81,14 @@ function project_renew_function(){
 	}
 }
 
+// function that adds priority program to the priority programs table
+function add_priority_programs(frm,program_description,sector,priority_program){
+	var priority_programs = frm.add_child("relevant_priority_programs")
+	priority_programs.priority_program_description = program_description 
+	priority_programs.sector = sector
+	priority_programs.priority_program = priority_program
+	cur_frm.refresh_fields();
+}
 
 /* end of the general functions section
 // =================================================================================================
@@ -100,7 +108,7 @@ frappe.ui.form.on('Project', {
 				// do nothing for now
 			}
 		}else{
-			// do nothing 
+			// do nothing
 		}
 	
 		// if project is a renewal make name read only
@@ -113,21 +121,50 @@ frappe.ui.form.on('Project', {
 // function that asks the user if they have verified all the information before
 // all the fields are made read only
 frappe.ui.form.on("Project","validate_button",function(frm){
-	frappe.confirm(
-		'Once Validated,You Cannot Change the Information. Do You Want to Continue?',
-		// If user choose to continue
-		function(){
-			// set the validating user and validation status
-			frm.set_value("name_of_verifying_user","test3@gmail.com")
-			frm.set_value("validated",1)
-			// save the document
-			cur_frm.save()
-		},
-		// if user choses No
-		function(){
-			// show_alert('Thanks for continue here!')
+	// check if the document has been saved
+	if(frm.doc.__islocal ? 0 : 1){
+		// check if NDP Aligment with Sector , Programs and Outcomes has Been Defined
+		if(frm.doc.ndp_aligment_sector_program_outcome){
+			frappe.confirm(
+				'Once Validated,You Cannot Change the Information. Do You Want to Continue?',
+				// If user choose to continue
+				function(){
+					// set the validating user and validation status
+					frm.set_value("name_of_verifying_user","test3@gmail.com")
+					frm.set_value("validated",1)
+					// save the document
+					cur_frm.save()
+				},
+				// if user choses No
+				function(){
+					// show_alert('Thanks for continue here!')
+				}
+			)
+			
+		}else{
+			console.log("form name")
+			console.log(frm.doc.name)
+			frappe.confirm(
+				'You Have Not Defined an NDP Alignment.Do You Want to Create One?',
+				
+				// If user choose to continue
+				function(){
+					frappe.route_options ={
+						"name_of_organization":frm.doc.your_organization,
+						"project":cur_frm.doc.name,
+		
+					}
+					frappe.set_route("Form", "NDP Alignment With Programs MDAs Outcomes","New NDP Alignment With Programs MDAs Outcomes 1")
+				},
+				// if user choses No
+				function(){
+					frappe.throw("Please Note that You Cannot Validate A Project Before Creating an NDP Aligment Record")
+				}
+			)
 		}
-	)
+	}else{
+		frappe.throw("Please Save The Project First")
+	}
 });
 
 
@@ -216,3 +253,52 @@ frappe.ui.form.on("Source Organization", "source_organization_type", function(fr
 		cur_frm.refresh_fields();
 	}
 });
+
+
+
+// function that allows the users set points of the Project on the Map
+frappe.ui.form.on("Source Organization", "source_organization_type", function(frm,cdt,cdn){ 
+	var child = locals[cdt][cdn];
+	// check if a funging status has been selected
+	if(child.source_organization_type == "Other"){
+		child.organization_type_is_not_in_the_list_above = 1
+		cur_frm.refresh_fields();
+	}
+});
+
+
+// function that fetches relevant priority Programs for Relevant Priority Programs 
+frappe.ui.form.on("Project", "economy", function(frm,cdt,cdn){ 
+	// get priority programs
+	frappe.call({
+		method: "frappe.client.get_list",
+		args: 	{
+				doctype: "Program",
+				filters: {
+					sector:"Economy",
+					priority_program:1
+				},
+		fields:["*"]
+		},
+		callback: function(response) {
+			console.log(response.message)
+			$.each(response.message,function(i,v){
+				add_priority_programs(frm,v.program,v.sector,v.program_code)
+			})
+
+
+			// if(frm.doc.economy){
+			// 	console.log("economyu")
+			// 	var program_description = "Test"
+			// 	var sector = "Economy"
+			// 	var priority_program = "Test Program"
+			// }else{
+			// 	console.log("noe")
+			// }
+		}
+	})
+});
+
+
+
+

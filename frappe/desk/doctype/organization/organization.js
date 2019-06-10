@@ -13,7 +13,7 @@ var field_to_hide_unhide = {
 		"country_director",
 		"three_alternative_contact_persons_section",
 		"total_number_of_staff_section","section_break_65",
-		"part_two","section_break_47"
+		"part_two","section_break_47","registration_years_section"
 	],
 	local_ngo: ["section_break_98","organization_address_local",
 		"section_break_106","section_break_112","community_group",
@@ -32,7 +32,7 @@ var field_to_hide_unhide = {
 		"country_director",
 		"three_alternative_contact_persons_section",
 		"total_number_of_staff_section","section_break_65",
-		"part_two","section_break_47",
+		"part_two","section_break_47","registration_years_section",
 		// fields for counry address
 		'directors_address','director_city','director_code','country',
 		// fields for local NGO
@@ -114,10 +114,11 @@ function redirect_if_existing_organization(frm){
 						// belongs to user hence do nothing
 					}else{
 						// does not belong to user hence redirect
-						msgprint("You Do Not Have Permisions to View Selected Organization, You Have been Redirected To Your Organization")
+						msgprint("You Do Not Have Permisions to View Selected Organization, You Have been Redirected To Your Organization: "+response.message[0].name)
+						frappe.set_route("Form", "Organization",response.message[0].name)
 					}
 				}else{
-					msgprint("You Have Already Registered Your Organiziation You Have be Redirected to It")
+					msgprint("You Have Already Registered Your Organiziation: "+response.message[0].name+" You Have be Redirected to It ")
 					frappe.set_route("Form", "Organization",response.message[0].name)
 				}
 			}
